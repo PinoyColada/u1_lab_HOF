@@ -9,6 +9,11 @@ const getSquares = (arr) => {
   /**
    * Use .map to return an array of all nums multiplied by 2
    */
+   let mappedNumbersByTwo = arr.map( (num) => {
+    let result = num * 2;
+    return result;
+  })
+  return mappedNumbersByTwo;
 }
 
 const isDivBy3 = (arr) => {
@@ -16,6 +21,14 @@ const isDivBy3 = (arr) => {
    * Use .map to return an array of booleans, if the number is divisible by 3 return true otherwise false
    * * The modulus % operator may be useful *
    */
+   let divisBy3 = arr.map( (num) => {
+    if (num % 3 === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  })
+    return divisBy3;
 }
 
 const filterOdds = (arr) => {
@@ -23,6 +36,13 @@ const filterOdds = (arr) => {
    * Use .filter to return an array of all odd numbers
    * * The modulus % operator may be useful *
    */
+  let onlyOdds = arr.filter((num) => {
+    if (num % 2 !== 0){
+      return num;
+    }
+  });
+  return onlyOdds;
+
 }
 
 const filterEvens = (arr) => {
@@ -30,22 +50,42 @@ const filterEvens = (arr) => {
    * Use .filter to return all even numbers
    * * The modulus % operator may be useful *
    */
+   let onlyEvens = arr.filter((num) => {
+    if (num % 2 === 0){
+      return num;
+    }
+  });
+  return onlyEvens;
 }
 const filterDivBy4 = (arr) => {
   /**
    * Use .filter to return all numbers that are divisible by 4
    * * The modulus % operator may be useful *
    */
+   let divisBy4 = arr.filter((num) => {
+    if (num % 4 === 0){
+      return num;
+    }
+  });
+  return divisBy4;
 }
 const addAllUp = (arr) => {
   /**
    * Use .reduce to return the total sum of all numbers
    */
+  let totalSum = (arr).reduce((accumulator, value) => {
+    return accumulator + value;
+  });
+  return totalSum;
 }
 const multiplyAllNums = (arr) => {
   /**
    * Use .reduce to return the total product of all numbers
    */
+   let productSum = (arr).reduce((accumulator, value) => {
+    return accumulator * value;
+  });
+  return productSum;
 }
 
 // BONUS
@@ -55,6 +95,11 @@ const sumSquareAllNums = (arr) => {
    * @param {[Number]} arr will contain numbers from 1-15
    * Your final result should be 1240
    */
+   let secondPowerSum = (arr).reduce((accumulator, value) => {
+    return accumulator + Math.pow(value, 2);
+  });
+  return secondPowerSum;
+
 }
 const addAllAges = (arr) => {
   /**
@@ -66,6 +111,15 @@ const addAllAges = (arr) => {
     ]
     Your final result should be 55
    */
+
+    function sumOfAges(arr, age) {
+      return arr.reduce(function(accumulator, value) {
+        (accumulator[value[age]] = accumulator[value[age]] || []).push(value);
+        return accumulator;
+      }, {});
+    };
+
+    return sumOfAges;
 }
 // BONUS
 
